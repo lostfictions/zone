@@ -1,0 +1,59 @@
+{
+  "name": "zone",
+  "version": "0.0.1",
+  "description": "cool zone",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "start-dev": "DEBUG=\"bort:*\" DEBUG_HIDE_DATE=true DEBUG_COLORS=true nodemon dist/main.js",
+    "dev": "run-p -l watch:ts start-dev",
+    "build": "rm -rf dist/ && tsc",
+    "test": "run-s -l test:*",
+    "test:jest": "jest --colors",
+    "test:ts": "tsc --noEmit",
+    "test:tslint": "tslint --project .",
+    "watch:ts": "tsc -w",
+    "watch:test": "jest --colors --watch"
+  },
+  "author": "s <https://github.com/lostfictions>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "envalid": "^4.1.2",
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "source-map-support": "^0.5.0",
+    "validator": "^9.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/express": "^4.0.39",
+    "@types/express-serve-static-core": "^4.0.56",
+    "@types/jest": "^21.1.8",
+    "@types/node": "^8.5.1",
+    "@types/validator": "^6.3.0",
+    "jest": "^21.2.1",
+    "nodemon": "^1.13.3",
+    "npm-run-all": "^4.1.2",
+    "ts-jest": "^21.2.4",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=8.7.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}
